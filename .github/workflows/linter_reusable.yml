@@ -27,3 +27,6 @@ jobs:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN_CALLER }}
           IGNORE_GITIGNORED_FILES: true
+          # terragrunt must not pick up on docker-bake.hcl, blocked by
+          # https://github.com/github/super-linter/issues/2537
+          VALIDATE_TERRAGRUNT: false
