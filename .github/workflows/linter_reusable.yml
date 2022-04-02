@@ -6,6 +6,7 @@ on:
   workflow_call:
     secrets:
       GITHUB_TOKEN_CALLER:
+        description: 'A GitHub Action token passed from the caller workflow'
         required: true
 
 jobs:
