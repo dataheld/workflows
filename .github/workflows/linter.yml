@@ -7,6 +7,6 @@ on:
 
 jobs:
   lint:
-    uses: .github/workflows/linter_reusable.yml
+    uses: .github/workflows/linter_reusable.yml@main
     secrets:
       GITHUB_TOKEN_CALLER: ${{ secrets.GITHUB_TOKEN }}
