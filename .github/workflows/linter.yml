@@ -9,4 +9,4 @@ jobs:
   lint:
     uses: .github/workflows/linter_reusable.yml
     secrets:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_TOKEN_CALLER: ${{ secrets.GITHUB_TOKEN }}
