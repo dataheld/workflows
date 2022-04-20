@@ -30,4 +30,8 @@ jobs:
           # terragrunt must not pick up on docker-bake.hcl, blocked by
           # https://github.com/github/super-linter/issues/2537
           VALIDATE_TERRAGRUNT: false
+          # lintr isn't just static code analysis, it calls eval, parse
+          # so it needs the project runtime for a complete analysis
+          # so it's best to run it with other cicd
+          VALIDATE_R: false
           LINTER_RULES_PATH: .
