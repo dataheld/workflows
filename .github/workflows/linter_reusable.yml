@@ -30,4 +30,4 @@ jobs:
           # terragrunt must not pick up on docker-bake.hcl, blocked by
           # https://github.com/github/super-linter/issues/2537
           VALIDATE_TERRAGRUNT: false
-          DOCKERFILE_HADOLINT_FILE_NAME: .hadolint.yaml
+          LINTER_RULES_PATH: .
