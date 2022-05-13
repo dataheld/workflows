@@ -11,11 +11,11 @@ on:
 
 jobs:
   lint:
-    name: Lint Code Base
+    name: Lint Code Base (Except R)
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           # Full git history is needed to get a proper list of 
           # changed files within `super-linter`
@@ -23,10 +23,10 @@ jobs:
       - name: Lint Code Base
         uses: github/super-linter/slim@v4
         env:
-          VALIDATE_ALL_CODEBASE: true
-          DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN_CALLER }}
+          LINTER_RULES_PATH: .
           IGNORE_GITIGNORED_FILES: true
+          VALIDATE_NATURAL_LANGUAGE: false
           # terragrunt must not pick up on docker-bake.hcl, blocked by
           # https://github.com/github/super-linter/issues/2537
           VALIDATE_TERRAGRUNT: false
@@ -34,4 +34,3 @@ jobs:
           # so it needs the project runtime for a complete analysis
           # so it's best to run it with other cicd
           VALIDATE_R: false
-          LINTER_RULES_PATH: .
