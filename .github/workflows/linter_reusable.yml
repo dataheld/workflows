@@ -23,6 +23,7 @@ jobs:
       - name: Lint Code Base
         uses: super-linter/super-linter:slim-v5
         env:
+          FILTER_REGEX_EXCLUDE: '.*\.(pdf|PDF)$'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN_CALLER }}
           LINTER_RULES_PATH: .
           IGNORE_GITIGNORED_FILES: true
