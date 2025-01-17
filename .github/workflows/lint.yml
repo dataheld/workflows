@@ -1,5 +1,5 @@
 ---
-name: Lint Code Base
+name: Lint
 on:
   push:
   pull_request:
@@ -8,4 +8,5 @@ permissions:
   checks: write
 jobs:
   lint:
+    name: Lint
     uses: ./.github/workflows/lint_reusable.yml
